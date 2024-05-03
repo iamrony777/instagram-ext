@@ -1,7 +1,7 @@
 {
-  "name": "chrome-extension-typescript-starter",
+  "name": "instagram-ext",
   "version": "1.0.0",
-  "description": "chrome-extension-typescript-starter",
+  "description": "instagram-ext",
   "main": "index.js",
   "scripts": {
     "watch": "webpack --config webpack/webpack.dev.js --watch",
@@ -14,15 +14,20 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chibat/chrome-extension-typescript-starter.git"
+    "url": "https://github.com/iamrony777/instagram-ext.git"
   },
   "dependencies": {
+    "@langchain/core": "^0.1.61",
+    "@langchain/openai": "^0.0.28",
+    "dotenv-webpack": "^8.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/chrome": "0.0.158",
+    "@types/dotenv-webpack": "^7.0.7",
     "@types/jest": "^29.5.0",
+    "@types/jquery": "^3.5.29",
     "@types/react": "^18.0.29",
     "@types/react-dom": "^18.0.11",
     "copy-webpack-plugin": "^9.0.1",
