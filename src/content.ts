@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 	if (request.type === "generate") {
-		newPost();
+		generateComment();
 	} else if (request.type === "comment") {
 		const { data } = request;
 		console.log({ comment: data.response }, "adding comment");
@@ -13,20 +13,20 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 // 	const textarea = document.querySelector('textarea[aria-label*="comment"]');
 // 	if (textarea) textarea.textContent = comment;
 // };
-const newPost = () => {
+const generateComment = () => {
 	const genBtnExists = document.getElementById("gen-button") !== null;
 
-	console.log({ genBtnExists });
-
 	if (!genBtnExists) {
-		console.log("creating new button");
+
 		const genBtn = document.createElement("img");
 		genBtn.id = "gen-button";
 		genBtn.title = "click to generate";
 		genBtn.src = chrome.runtime.getURL("images/button/generate.png");
+		genBtn.style.backgroundColor = "white"
 		genBtn.height = 24;
 		genBtn.width = 24;
 		genBtn.addEventListener("click", async () => {
+			console.log("generating response")
 			const description = document
 				.querySelector('meta[property="og:title"]')
 				?.getAttribute("content");
